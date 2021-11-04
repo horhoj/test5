@@ -1,5 +1,10 @@
 import { FC } from 'react';
+import { TodoListForm } from '../../features/todoList/TodoListForm';
 
 export const TodoListPage: FC = () => {
-  return <div>TodoListPage</div>;
+  return (
+    <>
+      <TodoListForm />
+    </>
+  );
 };

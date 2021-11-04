@@ -1,14 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AppState } from './types';
 
-const APP_SLICE_NAME = 'app';
-
 const initialState: AppState = {
   redirectUrl: null,
 };
 
 export const appSlice = createSlice({
-  name: APP_SLICE_NAME,
+  name: 'app',
   initialState,
   reducers: {
     // в компоненте RedirectExecutor мы отслеживаем изменение

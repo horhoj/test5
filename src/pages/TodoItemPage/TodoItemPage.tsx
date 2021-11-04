@@ -1,5 +1,12 @@
 import { FC } from 'react';
+import { useParams } from 'react-router';
+import { TodoItemForm } from '../../features/todoItem/todoItemForm';
 
 export const TodoItemPage: FC = () => {
-  return <div>TodoItemPage</div>;
+  const { id } = useParams<{ id: string }>();
+  return (
+    <>
+      <TodoItemForm id={id} />
+    </>
+  );
 };
