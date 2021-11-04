@@ -51,7 +51,7 @@ export const TodoItemView: FC<TodoItemViewProps> = ({
         </Element>
         <Element mt={20}>
           <ItemTitle>
-            {index}.{' '}
+            <span>{index}.&nbsp;</span>
             <HighlightValue value={todoItem.title} searchStr={findStr} />
           </ItemTitle>
         </Element>
@@ -88,6 +88,7 @@ const ItemTitle = styled.h3`
   font-size: 20px;
   line-height: 20px;
   display: flex;
+  //flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #333;

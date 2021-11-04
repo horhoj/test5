@@ -27,7 +27,7 @@ export const HighlightValue: React.FC<HighlightValueProps> = ({
   }
 
   return (
-    <>
+    <span>
       {slices.map((item, index) => (
         <span key={index}>
           {item}
@@ -36,13 +36,14 @@ export const HighlightValue: React.FC<HighlightValueProps> = ({
           ) : null}
         </span>
       ))}
-    </>
+    </span>
   );
 };
 
 const SearchStrWrap = styled.span`
   background-color: cadetblue;
   color: white;
+  font-weight: bold;
   border-radius: 3px;
-  padding: 3px;
+  padding: 0 5px;
 `;

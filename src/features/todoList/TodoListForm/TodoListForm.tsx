@@ -11,6 +11,7 @@ import { ROUTER_PARAM_NEW } from '../../../config/app';
 import { Input } from '../../../components/Input';
 import { TodoItemView } from './components/TodoItemView';
 import addIcon from './assets/img/add.svg';
+import clearIcon from './assets/img/clear.svg';
 import { findFilter } from './helpers';
 
 export const TodoListForm: FC = () => {
@@ -40,6 +41,10 @@ export const TodoListForm: FC = () => {
     dispatch(appActions.redirect(path));
   };
 
+  const handleClearFindStr = () => {
+    setFindStr('');
+  };
+
   return (
     <>
       <Element mt={0}>
@@ -60,6 +65,12 @@ export const TodoListForm: FC = () => {
             showError={false}
             placeholder={'Найти'}
             label={'Найти'}
+          />
+          <Button
+            iconSize={60}
+            icon={clearIcon}
+            type={'button'}
+            onClick={handleClearFindStr}
           />
         </ControlPanel>
       </Element>
@@ -93,4 +104,6 @@ const WrapTodoList = styled.div`
 const ControlPanel = styled.div`
   display: flex;
   gap: 20px;
+  justify-content: center;
+  align-items: center;
 `;
