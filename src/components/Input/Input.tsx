@@ -8,7 +8,7 @@ export const Input: React.FC<InputProps> = ({
   label,
   placeholder,
   error,
-  showError,
+  showError = false,
   name,
   type,
   onBlur,

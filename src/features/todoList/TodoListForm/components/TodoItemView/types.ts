@@ -5,4 +5,6 @@ export interface TodoItemViewProps {
   handleIsDoneChange(isDone: boolean, id: number): void;
   handleDelete(id: number): void;
   handleEdit(id: number): void;
+  findStr: string;
+  index: number;
 }

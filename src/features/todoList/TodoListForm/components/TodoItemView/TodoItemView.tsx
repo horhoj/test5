@@ -4,6 +4,7 @@ import { Element } from '../../../../../GlobalStyles';
 import { Button } from '../../../../../components/Button';
 import editIcon from '../../assets/img/edit.svg';
 import deleteIcon from '../../assets/img/delete.svg';
+import { HighlightValue } from '../../../../../components/HighlightValue';
 import { TodoItemViewProps } from './types';
 
 export const TodoItemView: FC<TodoItemViewProps> = ({
@@ -11,6 +12,8 @@ export const TodoItemView: FC<TodoItemViewProps> = ({
   handleIsDoneChange,
   handleDelete,
   handleEdit,
+  findStr,
+  index,
 }) => {
   const handleIsDoneCheckBoxChange = (e: ChangeEvent<HTMLInputElement>) => {
     const isChecked = e.target.checked;
@@ -47,14 +50,19 @@ export const TodoItemView: FC<TodoItemViewProps> = ({
           </ItemHeader>
         </Element>
         <Element mt={20}>
-          <ItemTitle>{todoItem.title}</ItemTitle>
+          <ItemTitle>
+            {index}.{' '}
+            <HighlightValue value={todoItem.title} searchStr={findStr} />
+          </ItemTitle>
         </Element>
         <Element mt={10}>
           <DateWrap>{new Date(todoItem.date).toLocaleString()}</DateWrap>
         </Element>
 
         <Element mt={10}>
-          <ItemContent>{todoItem.content}</ItemContent>
+          <ItemContent>
+            <HighlightValue value={todoItem.content} searchStr={findStr} />
+          </ItemContent>
         </Element>
       </Wrap>
     </>
